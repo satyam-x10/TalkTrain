@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Card from "./card";
 
 export function Chat({ train_no }:{train_no: string}) {
-  const [trainData, setTrainData] = useState(null);
+  const [trainData, setTrainData] = useState<Array<object>>([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -26,7 +26,7 @@ export function Chat({ train_no }:{train_no: string}) {
   return (
     <div className="flex flex-col h-[60vh] justify-start pb-10 overflow-y-auto">
       {trainData?.map((trainChat) => (
-        <Card key={trainChat._id} trainChat={trainChat} />
+        <Card key={trainChat} trainChat={trainChat} />
       ))}
     </div>
   );
