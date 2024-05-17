@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { connectToMongoDB } from "@/lib/db";
 import Train from "@/lib/models/train";
 
-export async function GET(req) {
+export async function GET(req:Request) {
   const train_no = req.url.split("/").pop();
   try {
     await connectToMongoDB();
@@ -16,7 +16,7 @@ export async function GET(req) {
   }
 }
 
-export async function POST(req) {
+export async function POST(req:Request) {
   const { train_no, chat } = await req.json();
 
   try {
