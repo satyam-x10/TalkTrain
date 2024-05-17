@@ -18,7 +18,7 @@ To read more about using these font, please visit the Next.js documentation:
 - Pages Directory: https://nextjs.org/docs/pages/building-your-application/optimizing/fonts
 **/
 "use  client";
-export function Chatbar({ trainData }) {
+export function Chatbar({ trainData }:{trainData: any}) {
   return (
     <header className="bg-gray-900 text-white py-4 px-6 md:px-8 lg:px-10 flex items-center justify-between">
       <div className="flex items-center gap-4">

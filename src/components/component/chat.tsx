@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Card from "./card";
 
-export function Chat({ train_no }) {
+export function Chat({ train_no }:{train_no: number}) {
   const [trainData, setTrainData] = useState(null);
 
   useEffect(() => {
