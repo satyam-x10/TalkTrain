@@ -26,7 +26,7 @@ export function Search() {
   };
 
   // Function to handle train selection
-  const handleTrainSelect = (trainNumber) => {
+  const handleTrainSelect = (trainNumber:any) => {
     setSelectedTrain(trainNumber);
   };
 
