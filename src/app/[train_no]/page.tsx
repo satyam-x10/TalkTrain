@@ -1,8 +1,9 @@
 import React from "react";
 import data from "../../lib/scraper/train_data.json";
 import { Chatbar } from "@/components/component/chatbar";
-import  {Chat}  from "@/components/component/chat";
+import { Chat } from "@/components/component/chat";
 import { Typebar } from "@/components/component/typebar";
+import { Navbar } from "@/components/component/navbar";
 const TrainPage = ({ params }: { params: { train_no: string } }) => {
   const { train_no } = params;
 
@@ -11,15 +12,21 @@ const TrainPage = ({ params }: { params: { train_no: string } }) => {
 
   // Check if train is found
   if (!train) {
-    return <div>Train not found</div>;
+    return (
+      <div className="flex flex-col justify-around">
+        <Navbar />
+        <span>Train not found</span>
+      </div>
+    );
   }
 
   // Render train details
   return (
-    <div> 
-         <Chatbar trainData={train} />
-         <div><Chat /></div>         
-         <Typebar/>
+    <div className="flex flex-col">
+      <Navbar />
+      <Chatbar trainData={train} />
+      <Chat train_no={train_no} />
+      <Typebar />
     </div>
   );
 };
